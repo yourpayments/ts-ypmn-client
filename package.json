@@ -1,9 +1,10 @@
 {
   "name": "ts-ypmn-client",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Typescript SDK for YPMN API",
   "scripts": {
-    "build": "node scripts/GenerateEntryPoint.js && rollup --config scripts/rollup.js"
+    "build": "node scripts/GenerateEntryPoint.js && tsc && tsc -p tsconfig-cjs.json",
+    "build:clean": "rmdir /s dist"
   },
   "keywords": [
     "YPMN",
@@ -24,10 +25,18 @@
     "common-es": "^1.0.1",
     "json2typescript": "^1.5.1"
   },
-  "type": "module",
-  "main": "./disc/cjs/index.js",
-  "module": "./disc/esm/index.js",
-  "imports": {
-    "*": "./lib/*"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourpayments/js-api-client"
+  },
+  "homepage": "git+https://github.com/yourpayments/js-api-client",
+
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "files": [
+    "dist/"
+  ],
+  "typescript": {
+    "definition": "lib/index.d.ts"
   }
 }

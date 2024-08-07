@@ -1,8 +1,5 @@
-import fs from "fs";
-import path from "path";
-import { getGlobals } from 'common-es';
-
-const { __dirname, __filename } = getGlobals(import.meta.url);
+const fs = require("fs");
+const path = require("path");
 
 const srcDir = path.join(__dirname, '../lib');
 
@@ -16,7 +13,7 @@ function getAllFiles(dirPath, arrayOfFiles) {
     files.forEach(file => {
         if (fs.statSync(path.join(dirPath, file)).isDirectory()) {
             arrayOfFiles = getAllFiles(path.join(dirPath, file), arrayOfFiles);
-        } else if (file.endsWith('.ts') ) {
+        } else if (file.endsWith('.ts') && !file.includes("Example")) {
             arrayOfFiles.push(path.join(dirPath, file));
         }
     });

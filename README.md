@@ -1,4 +1,5 @@
 # «Твои платежи» - интеграция на TypeScript
+![](https://repository-images.githubusercontent.com/638835276/2067d028-b541-4355-b069-3c12c8a28042)
 ---
 ### Простая установка
 

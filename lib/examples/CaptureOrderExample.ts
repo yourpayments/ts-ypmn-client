@@ -1,7 +1,4 @@
-import {YPMN} from "../YPMN";
-import {API} from "../YpmnConstants";
-import {CaptureOrder} from "../model/payments/capture/CaptureOrder";
-import {CaptureOrderResult} from "../model/payments/capture/CaptureOrderResult";
+import {API, CaptureOrder, CaptureOrderResult, YPMN,} from "ts-ypmn-client";
 
 /*
  * Пример запроса на списание средств

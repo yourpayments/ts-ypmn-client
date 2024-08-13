@@ -1,15 +1,18 @@
-import {YPMN} from "../../YPMN";
-import {Product} from "../../model/payments/authorize/request/product/Product";
-import {BillingInformation} from "../../model/payments/authorize/request/client/BillingInformation";
-import {Client} from "../../model/payments/authorize/request/client/Client";
-import {AuthorizationType} from "../../model/payments/authorize/request/authorization/AuthorizationType";
-import {API, PaymentMethod} from "../../YpmnConstants";
-import {AuthorizeOrder} from "../../model/payments/authorize/request/AuthorizeOrder";
-import {AuthorizeOrderResult} from "../../model/payments/authorize/response/AuthorizeOrderResult";
+import {
+    API,
+    AuthorizationType,
+    AuthorizeOrder, AuthorizeOrderResult,
+    BillingInformation,
+    Client,
+    PaymentMethod,
+    Product,
+    YPMN
+} from "ts-ypmn-client";
 
 /*
  * Пример запроса на авторизацию платежа картой
  */
+
 let CardAuthorizeOrderRequest = async () => {
 
     // Инициализируем API клиент

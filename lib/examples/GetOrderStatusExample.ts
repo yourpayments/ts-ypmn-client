@@ -1,10 +1,9 @@
-import {YPMN} from "../YPMN";
-import {API} from "../YpmnConstants";
-import {OrderStatus} from "../model/payments/status/OrderStatus";
+import {API, OrderStatus, YPMN} from "ts-ypmn-client";
 
 /*
  * Пример запроса информации о платеже
  */
+
 let GetOrderStatusRequest = async () => {
 
     // Инициализируем API клиент

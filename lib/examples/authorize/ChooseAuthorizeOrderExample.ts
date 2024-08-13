@@ -1,11 +1,13 @@
-import {YPMN} from "../../YPMN";
-import {Product} from "../../model/payments/authorize/request/product/Product";
-import {BillingInformation} from "../../model/payments/authorize/request/client/BillingInformation";
-import {Client} from "../../model/payments/authorize/request/client/Client";
-import {AuthorizationType} from "../../model/payments/authorize/request/authorization/AuthorizationType";
-import {AuthorizeOrder} from "../../model/payments/authorize/request/AuthorizeOrder";
-import {AuthorizeOrderResult} from "../../model/payments/authorize/response/AuthorizeOrderResult";
-import {API} from "../../YpmnConstants";
+import {
+    API,
+    AuthorizationType,
+    AuthorizeOrder,
+    AuthorizeOrderResult,
+    BillingInformation,
+    Client,
+    Product,
+    YPMN
+} from "ts-ypmn-client";
 
 /*
  * Пример запроса на авторизацию платежа картой

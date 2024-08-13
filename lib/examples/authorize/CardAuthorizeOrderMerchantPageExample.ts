@@ -1,12 +1,14 @@
-import {YPMN} from "../../YPMN";
-import {Product} from "../../model/payments/authorize/request/product/Product";
-import {BillingInformation} from "../../model/payments/authorize/request/client/BillingInformation";
-import {Client} from "../../model/payments/authorize/request/client/Client";
-import {AuthorizationType} from "../../model/payments/authorize/request/authorization/AuthorizationType";
-import {API, PaymentMethod} from "../../YpmnConstants";
-import {AuthorizeOrder} from "../../model/payments/authorize/request/AuthorizeOrder";
-import {AuthorizeOrderResult} from "../../model/payments/authorize/response/AuthorizeOrderResult";
-import {CardDetails} from "../../model/payments/authorize/request/authorization/CardDetails";
+import {
+    API,
+    AuthorizationType,
+    AuthorizeOrder, AuthorizeOrderResult,
+    BillingInformation,
+    CardDetails,
+    Client,
+    PaymentMethod,
+    Product,
+    YPMN
+} from "ts-ypmn-client";
 
 /*
  * Пример запроса на авторизацию платежа картой на странице мерчанта

@@ -10,7 +10,7 @@ import {
 } from "ts-ypmn-client";
 
 /*
- * Пример запроса на авторизацию платежа картой
+ * Пример запроса на авторизацию платежа с выбором метода оплаты
  */
 let ChooseAuthorizeOrderRequest = async () => {
 

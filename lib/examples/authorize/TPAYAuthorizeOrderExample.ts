@@ -10,9 +10,9 @@ import {
 } from "ts-ypmn-client";
 
 /*
- * Пример запроса на авторизацию платежа иностранной картой
+ * Пример запроса на авторизацию платежа Т-пэй
  */
-let SOMAuthorizeOrderRequest = async () => {
+let TPAYAuthorizeOrderRequest = async () => {
 
     // Инициализируем API клиент
     let ypmn_client = new YPMN("typescript", "typescript");
@@ -38,7 +38,7 @@ let SOMAuthorizeOrderRequest = async () => {
     let client = new Client(billing);
 
     // Задаем параметры авторизации платежа
-    let authorization = new AuthorizationType(PaymentMethod.SOM);
+    let authorization = new AuthorizationType(PaymentMethod.TPAY);
 
     // Создаем модель информации об авторизации платежа
     let authorizeOrder = new AuthorizeOrder(
@@ -58,4 +58,4 @@ let SOMAuthorizeOrderRequest = async () => {
     console.log(response.paymentResult.url);
 }
 
-SOMAuthorizeOrderRequest().then();
+TPAYAuthorizeOrderRequest().then();

@@ -10,7 +10,7 @@ import {
 } from "ts-ypmn-client";
 
 /*
- * Пример запроса на авторизацию платежа картой
+ * Пример запроса на авторизацию платежа в рассрочку
  */
 let PodeliAuthorizeOrderRequest = async () => {
 

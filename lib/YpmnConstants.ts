@@ -22,6 +22,7 @@ export class PaymentMethod {
     public static FasterPayments = "FASTER_PAYMENTS";
     public static SOM = "SOM";
     public static Podeli = "BNPL";
+    public static TPAY = "TPAY";
 }
 
 export enum API {

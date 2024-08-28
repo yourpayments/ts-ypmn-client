@@ -18,6 +18,7 @@ npm install ts-ypmn-client
 4. [Оплата зарубежной картой](lib/examples/authorize/SOMAuthorizeOrderExample.ts)
 5. [Оплата с помощью "подели"](lib/examples/authorize/PodeliAuthorizeOrderExample.ts)
 6. [Оплата с выбором способа оплаты](lib/examples/authorize/ChooseAuthorizeOrderExample.ts)
+7. [Т-пэй](lib/examples/authorize/TPAYAuthorizeOrderExample.ts)
 
 
 #### 2. [Списание средств](lib/examples/CaptureOrderExample.ts)

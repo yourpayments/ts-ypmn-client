@@ -13,6 +13,17 @@ export class Receiver {
     set personalAccount(value: string) { this._personalAccount = value; }
     set period(value: string) { this._period = value; }
 
+    get sku() { return this._sku; }
+    get bic() { return this._bic; }
+    get correspondentAccount() { return this._correspondentAccount; }
+    get account() { return this._account; }
+    get name() { return this._name; }
+    get inn() { return this._inn; }
+    get kpp() { return this._kpp; }
+    get purpose() { return this._purpose; }
+    get personalAccount() { return this._personalAccount; }
+    get period() { return this._period; }
+
     @JsonProperty("sku", String) private _sku: string = null;
     @JsonProperty("bic", String) private _bic: string = null;
     @JsonProperty("correspondentAccount", String) private _correspondentAccount: string = null;

@@ -52,8 +52,4 @@ export class DetailsConverter implements JsonCustomConvert<Details> {
 
         return details;
     }
-
-    private isObjectWithCustomFields(value: any): value is { customFields: Record<string, any> } {
-        return value !== null && typeof value === 'object' && 'customFields' in value && typeof value.customFields === 'object';
-    }
 }

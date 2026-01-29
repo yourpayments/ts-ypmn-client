@@ -30,7 +30,7 @@ export class AuthorizeOrder {
         this._returnUrl = value;
     }
 
-    public details(value: Details) {
+    set details(value: Details) {
         this._details = value;
     }
 

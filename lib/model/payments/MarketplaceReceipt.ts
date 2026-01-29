@@ -10,6 +10,14 @@ export class MarketplaceReceipt {
         this._receipt = value;
     }
 
+    get merchantCode() {
+        return this._merchantCode;
+    }
+
+    get receipt() {
+        return this._receipt;
+    }
+
     @JsonProperty("merchantCode", String) private _merchantCode: string = null;
     @JsonProperty("receipt", String) private _receipt: string = null;
 

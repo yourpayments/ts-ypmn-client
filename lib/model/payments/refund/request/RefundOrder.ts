@@ -34,6 +34,10 @@ export class RefundOrder {
         this._currency = value;
     }
 
+    set details(value: Details) {
+        this._details = value;
+    }
+
     @JsonProperty("payuPaymentReference", Number) private _payuPaymentReference: number;
 
     @JsonProperty("originalAmount", Number) private _originalAmount: number;

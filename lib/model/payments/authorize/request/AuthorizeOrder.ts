@@ -5,6 +5,8 @@ import {AuthorizationType} from "./authorization/AuthorizationType";
 import {AirlineInfo} from "./airlineInfo/AirlineInfo";
 import {ThreeDSecure} from "./threeDSecure/ThreeDSecure";
 import {StoredCredentials} from "./StoredCredentials";
+import {Details} from "../../Details";
+import {DetailsConverter} from "../../DetailsConverter";
 
 /*
  * Модель запроса авторизации заказа
@@ -28,11 +30,8 @@ export class AuthorizeOrder {
         this._returnUrl = value;
     }
 
-    public  addDetails(value: string) {
-        if (this._additionalDetails === undefined) {
-            this._additionalDetails = []
-        }
-        this._additionalDetails[this._additionalDetails.length] = value;
+    set details(value: Details) {
+        this._details = value;
     }
 
     public addProduct(value: Product) {
@@ -61,8 +60,6 @@ export class AuthorizeOrder {
 
     @JsonProperty("returnUrl", String) private _returnUrl: string = "";
 
-    @JsonProperty("additionalDetails", [String]) private _additionalDetails: string[];
-
     @JsonProperty("products", [Product]) private _products: Product[] = [];
 
     @JsonProperty("authorization", AuthorizationType) private _authorizationRequest: AuthorizationType | undefined = undefined;
@@ -75,6 +72,8 @@ export class AuthorizeOrder {
 
     @JsonProperty("storedCredentials", StoredCredentials) private _storedCredentials: StoredCredentials;
 
+    @JsonProperty("details", DetailsConverter) private _details: Details;
+
     constructor(merchantPaymentReference: string = "",
                 currency: string = null,
                 returnUrl: string = null,
@@ -82,7 +81,8 @@ export class AuthorizeOrder {
                 client: Client = null,
                 airlineInfo: AirlineInfo = null,
                 threeDSecure: ThreeDSecure = null,
-                storedCredentials: StoredCredentials = null,) {
+                storedCredentials: StoredCredentials = null,
+                details: Details = null,) {
         this._merchantPaymentReference = merchantPaymentReference;
         this._currency = currency;
         this._returnUrl = returnUrl;
@@ -91,5 +91,6 @@ export class AuthorizeOrder {
         this._airlineInfo = airlineInfo;
         this._storedCredentials = storedCredentials;
         this._threeDSecure = threeDSecure;
+        this._details = details;
     }
 }

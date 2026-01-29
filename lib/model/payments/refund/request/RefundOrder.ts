@@ -1,5 +1,7 @@
 import {JsonObject, JsonProperty} from "json2typescript";
 import {MarketplaceV1} from "./MarketplaceV1";
+import {DetailsConverter} from "../../DetailsConverter";
+import {Details} from "../../Details";
 
 /*
  * Модель запроса на возврат/отмену
@@ -32,6 +34,10 @@ export class RefundOrder {
         this._currency = value;
     }
 
+    set details(value: Details) {
+        this._details = value;
+    }
+
     @JsonProperty("payuPaymentReference", Number) private _payuPaymentReference: number;
 
     @JsonProperty("originalAmount", Number) private _originalAmount: number;
@@ -44,15 +50,19 @@ export class RefundOrder {
 
     @JsonProperty("marketplaceV1", MarketplaceV1) private _marketplaceV1: MarketplaceV1;
 
+    @JsonProperty("details", DetailsConverter) private _details: Details;
+
 
     constructor(payuPaymentReference: number = null,
                 originalAmount: number = null,
                 amount: number = null,
-                currency: string = null) {
+                currency: string = null,
+                details: Details = null) {
         this._payuPaymentReference = payuPaymentReference;
         this._originalAmount = originalAmount;
         this._amount = amount;
         this._currency = currency;
+        this._details = details;
     }
 
 }

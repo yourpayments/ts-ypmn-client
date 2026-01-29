@@ -1,4 +1,6 @@
 import {JsonObject, JsonProperty} from "json2typescript";
+import {DetailsConverter} from "../DetailsConverter";
+import {Details} from "../Details";
 
 /*
  * Модель запроса на списание средств
@@ -22,6 +24,10 @@ export class CaptureOrder {
         this._currency = value;
     }
 
+    set details(value: Details) {
+        this._details = value;
+    }
+
     @JsonProperty("payuPaymentReference", Number) private _payuPaymentReference: number;
 
     @JsonProperty("originalAmount", Number) private _originalAmount: number;
@@ -30,14 +36,18 @@ export class CaptureOrder {
 
     @JsonProperty("currency", String) private _currency: string;
 
+    @JsonProperty("details", DetailsConverter) private _details: Details;
+
 
     constructor(payuPaymentReference: number = null,
                 originalAmount: number = null,
                 amount: number = null,
-                currency: string = null) {
+                currency: string = null,
+                details: Details = null) {
         this._payuPaymentReference = payuPaymentReference;
         this._originalAmount = originalAmount;
         this._amount = amount;
         this._currency = currency;
+        this._details = details;
     }
 }
